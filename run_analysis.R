@@ -72,9 +72,9 @@ labled_col_names <- contains_mean_or_std
 
 
 
-features_text$V2 <- as.character(features_text$V2) 
+features_mean_and_std$V2 <- as.character(features_mean_and_std$V2) 
 
-features_text$V2 <- gsub("[[:punct:]]", "", features_text$V2)
+features_mean_and_std$V2 <- gsub("[[:punct:]]", "", features_mean_and_std$V2)
 
 
 
