@@ -18,13 +18,13 @@ Please use the following steps to ensure that there are no problems
     
 #### How to run
 
-1) open R studio and set your working directory to a CLEAN folder (with no other files, folders, or variables in it)
-2) open a new R script - but do not save it
-3) go back to git hub, and open my "run_analysis.R" file in git hub 
-4) click on the "RAW" tab, so that you can see the raw R code in your browser
-5) do Ctrl + A - or the equivilant O/S command to Select ALL text (copying all my source code)
-6) paste the source code into the new unsaved R script created in step 2
-7) begin running the commands SLOWLY one by one, giving ample time to download / load all of the data sets
+1. open R studio and set your working directory to a CLEAN folder (with no other files, folders, or variables in it)
+2. open a new R script - but do not save it
+3. go back to git hub, and open my "run_analysis.R" file in git hub 
+4. click on the "RAW" tab, so that you can see the raw R code in your browser
+5. do Ctrl + A - or the equivilant O/S command to Select ALL text (copying all my source code)
+6. paste the source code into the new unsaved R script created in step 2
+7. begin running the commands SLOWLY one by one, giving ample time to download / load all of the data sets
 
 
 * The script will check if you have the file saved as "data.zip", if you do not, it will download and unzip the file (be patient while it does so)
