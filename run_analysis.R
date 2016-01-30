@@ -1,7 +1,6 @@
 ## Jonathan Sinclair
 ## assumes you have data downloaded
 ## if not, please download
-## :)
 
 
 
