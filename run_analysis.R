@@ -2,24 +2,26 @@
 ## assumes you have data downloaded
 ## if not, please download
 
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+
+if(!file.exists("data.zip")) {download.file(url, destfile = "data.zip"); unzip("data.zip")}
+
+##unzip("data.zip")
+
+x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
+
+y_test <- read.table("./UCI HAR Dataset/train/Y_train.txt")
 
 
-unzip("data.zip", exdir="data")
 
-x_test <- read.table("./test/X_test.txt")
+x_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 
-y_test <- read.table("./train/Y_train.txt")
-
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
 
 
-x_train <- read.table("./train/X_train.txt")
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 
-y_train <- read.table("./train/y_train.txt")
-
-
-subject_test <- read.table("./test/subject_test.txt")
-
-subject_train <- read.table("./train/subject_train.txt")
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 
 
 test_and_train <- rbind(x_test, x_train)
@@ -33,7 +35,7 @@ combined <- cbind(subject_test_and_train, y_labels,
                   test_and_train)
 
 
-features_text <- read.table("./features.txt")
+features_text <- read.table("./UCI HAR Dataset/features.txt")
 
 
 contains_mean_or_std <- grep(pattern = "mean()|std()", x = 
@@ -56,11 +58,10 @@ contains_mean_or_std <- combined[ , c(1,2, plus2)]
 
 
 
-activity_labels <- read.table("./activity_labels.txt")
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
 
 contains_mean_or_std[,2] <- activity_labels$V2
-[contains_mean_or_std$V1.1]
 
 
 
@@ -87,6 +88,8 @@ grouped <- group_by(labled_col_names, personID, activity)
 
 
 sub_data <- summarise_each(grouped, funs(mean))
+View(sub_data)
+write.table("tidy_data.txt", row.names = FALSE)
 
 
 
