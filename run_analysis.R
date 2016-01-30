@@ -2,7 +2,9 @@
 ## assumes you have data downloaded
 ## if not, please download
 
-url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+rm(list=ls())
+
+url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
 if(!file.exists("data.zip")) {download.file(url, destfile = "data.zip"); unzip("data.zip")}
 
@@ -63,7 +65,7 @@ contains_mean_or_std[,2] <- activity_labels$V2[contains_mean_or_std$V1.1]
 
 
 
-features_mean_and_std <- features_text[ , indicies]
+features_mean_and_std <- features_text[indicies , ]
 
 
 labled_col_names <- contains_mean_or_std
@@ -85,8 +87,9 @@ grouped <- group_by(labled_col_names, personID, activity)
 
 
 sub_data <- summarise_each(grouped, funs(mean))
-View(sub_data)
+
 write.table(sub_data, "tidy_data.txt", row.names = FALSE)
+View(sub_data)
 
 
 
