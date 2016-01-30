@@ -1,4 +1,4 @@
-
+## assumes you have data downloaded
 
 url <- "https://d396qusza40orc.cloudfront.net/getdata
 %2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -6,7 +6,7 @@ url <- "https://d396qusza40orc.cloudfront.net/getdata
 
 download.file(url, destfile = "./data/data.zip")
 
-unzip("data".zip, exdir="data")
+unzip("data.zip", exdir="data")
 
 
 setwd("~/data/data/UCI HAR Dataset")
