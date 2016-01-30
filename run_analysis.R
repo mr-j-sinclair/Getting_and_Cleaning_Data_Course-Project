@@ -1,17 +1,11 @@
+## Jonathan Sinclair
 ## assumes you have data downloaded
 ## if not, please download
 ## :)
 
-url <- "https://d396qusza40orc.cloudfront.net/getdata
-%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
-
-download.file(url, destfile = "./data/data.zip")
 
 unzip("data.zip", exdir="data")
-
-
-setwd("~/data/data/UCI HAR Dataset")
 
 x_test <- read.table("./test/X_test.txt")
 
@@ -95,7 +89,6 @@ grouped <- group_by(labled_col_names, personID, activity)
 
 sub_data <- summarise_each(grouped, funs(mean))
 
-sub_data <- summarise_each(grouped, funs(mean))
 
 
 
