@@ -7,6 +7,7 @@ Course Project for "Getting and Cleaning Data" - Coursera
 
 Please use the following steps to ensure that there are no problems
 
+* ASSUMPTION #0 - you have the "dplyr" package installed - if not, please install this before you begin
 * ASSUMPTION #1 - you are using the Windows operating system, therefore, if you need to download the file, "curl" is ommited from the download.file instruction
 * ASSUMPTION #2 - you have, or will download the file to your working directory, called "data.zip"
     - If you are on a DIFFERENT O/S, you may need to add "method = curl" to the download.file() argument 
